@@ -1,3 +1,3 @@
 provider "aws" {
-  region = "ap-south-1"  # Mumbai or as required
+  region = "ap-south-1" # Mumbai or as required
 }

@@ -7,7 +7,7 @@ resource "aws_security_group" "sg" {
   description = "Allow traffic on custom port"
 
   ingress {
-    from_port   = 1234        # Replace with last 4 digits of your roll number
+    from_port   = 1234 # Replace with last 4 digits of your roll number
     to_port     = 1234
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
@@ -22,9 +22,9 @@ resource "aws_security_group" "sg" {
 }
 
 resource "aws_instance" "web" {
-  ami           = "ami-0c55b159cbfafe1f0" # Ubuntu 22.04 LTS (valid as of now)
-  instance_type = "t2.micro"
-  key_name      = "your-key-name"         # Replace with your actual EC2 key pair name
+  ami                    = "ami-0c55b159cbfafe1f0" # Ubuntu 22.04 LTS (valid as of now)
+  instance_type          = "t2.micro"
+  key_name               = "your-key-name" # Replace with your actual EC2 key pair name
   vpc_security_group_ids = [aws_security_group.sg.id]
 
   tags = {
